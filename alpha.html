@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The Journal</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>The Journal</h1>
+        <a href="{{ url_for('all_journals') }}">Read Previous</a><br>
+        <a href="{{ url_for('create') }}">Create Today's</a><br>
+        <a href="{{ url_for('logout') }}" class="logout">Logout</a>
+    </div>
+</body>
+</html>

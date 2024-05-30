@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The Journal</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles02.css') }}">
+</head>
+<body>
+    <div class="form-container">
+        <h1>Create Journal Entry</h1>
+        <form method="post" action="{{ url_for('create') }}">
+            {{ form.csrf_token }}
+            <label for="date">{{ form.date.label }}</label>
+            {{ form.date }} <br>
+            <label for="purpose">{{ form.purpose.label }}</label>
+            {{ form.purpose(size=30) }} <br>
+            <label for="notes">{{ form.notes.label }}</label>
+            {{ form.notes(size=300) }} <br>
+            {{ form.save }}
+            <div>
+                <a href="{{ url_for('alpha') }}">Return to home</a>
+                <a href="{{ url_for('logout') }}">Logout</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

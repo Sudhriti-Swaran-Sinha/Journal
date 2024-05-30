@@ -1,0 +1,32 @@
+<!-- templates/all_journals.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All Journals</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles04.css') }}">
+</head>
+<body>
+    <h1>All Journal Entries</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Purpose</th>
+                <th>Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for journal in journals %}
+            <tr>
+                <td>{{ journal.db_date }}</td>
+                <td>{{ journal.db_purpose }}</td>
+                <td>{{ journal.db_notes }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{{ url_for('alpha') }}">Home</a>
+    <a href="{{ url_for('logout') }}">Logout</a>
+</body>
+</html>
